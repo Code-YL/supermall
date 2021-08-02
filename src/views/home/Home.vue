@@ -83,7 +83,7 @@
     mounted() {
       //监听图片加载事件
       const refresh = this.debounce(this.$refs.scroll.refresh,100)
-      this.$bus.$on('itemImageLoad',() => {
+      this.$bus.$on('homeItemImageLoad',() => {
         refresh()
       })
     },
