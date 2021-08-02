@@ -26,6 +26,8 @@
           this.$bus.$emit('homeItemImageLoad')
         }else if(this.$route.path == '/detail'){
           this.$bus.$emit('detailItemImageLoad')
+        }else if(this.$route.path == '/category'){
+          this.$bus.$emit('categoryItemImageLoad')
         }
       },
       itemClick() {
