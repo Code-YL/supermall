@@ -36,6 +36,7 @@
     },
     methods: {
       itemClick() {
+        if(this.$route.path !== this.path)
         this.$router.replace(this.path)
       }
     }

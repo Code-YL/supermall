@@ -162,7 +162,7 @@
         this.iid = iid
 
         // 2.请求数据
-        getDetail(iid).then(res => {
+        getDetail(this.iid).then(res => {
           // 2.1.获取结果
           const data = res.result;
 
@@ -214,7 +214,6 @@
     top: 44px;
     bottom: 60px;
   }
-
   .back-top {
     position: fixed;
     right: 10px;

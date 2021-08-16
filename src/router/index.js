@@ -40,5 +40,10 @@ const router = new VueRouter({
   routes,
   mode:'history'
 })
+// 解决重复点击导航路由报错
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err);
+}
 
 export default router

@@ -1,6 +1,6 @@
 <template>
   <div id="home" class="wrapper">
-    <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
+    <nav-bar class="home-nav"><div slot="center">集美购物街</div></nav-bar>
     <tab-control class="tab-control"
                    :titles="['流行', '新款', '精选']"
                    ref="tabControl1"
@@ -62,7 +62,8 @@
         currentType: 'pop',
         isShowBackTop: false,
         isShowTab: false,
-        tabOffsetTOP: 0
+        tabOffsetTOP: 0,
+        saveY:0
       }
     },
     computed: {
@@ -86,6 +87,13 @@
       this.$bus.$on('homeItemImageLoad',() => {
         refresh()
       })
+    },
+    activated() {
+      this.$refs.scroll.scrollTo(0,this.saveY,0)
+      this.$refs.scroll.refresh()
+    },
+    deactivated() {
+      this.saveY = this.$refs.scroll.getCurrentY()
     },
     methods: {
       /**
